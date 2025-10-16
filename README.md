@@ -1,5 +1,5 @@
 # [Takım Oluşturma Uygulaması]
-
+<img src >
 Bu depo, C# Form uygulamaları ile geliştirilmiş olan **[Basit Bir Takım Oluşturma Uygulamasının]** projesinin kaynak kodlarını içerir.
 
 ## 🌟 Özellikler
