@@ -41,6 +41,8 @@
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
+            button8 = new Button();
+            button9 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -185,11 +187,38 @@
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
+            // button8
+            // 
+            button8.BackColor = Color.FromArgb(255, 192, 192);
+            button8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            button8.Location = new Point(350, 295);
+            button8.Name = "button8";
+            button8.Size = new Size(97, 85);
+            button8.TabIndex = 13;
+            button8.Text = "Rastgele Takım Yap";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
+            // button9
+            // 
+            button9.BackColor = Color.Red;
+            button9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button9.Location = new Point(295, 140);
+            button9.Name = "button9";
+            button9.Size = new Size(80, 31);
+            button9.TabIndex = 14;
+            button9.Text = "Temizle";
+            button9.UseVisualStyleBackColor = false;
+            button9.Click += button9_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(464, 450);
+            BackColor = Color.Navy;
+            ClientSize = new Size(645, 423);
+            Controls.Add(button9);
+            Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(button5);
@@ -203,6 +232,7 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            ForeColor = Color.Black;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -225,5 +255,7 @@
         private Button button5;
         private Button button6;
         private Button button7;
+        private Button button8;
+        private Button button9;
     }
 }

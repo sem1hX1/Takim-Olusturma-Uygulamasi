@@ -15,46 +15,135 @@ namespace TakımOluşturma
         private void button1_Click(object sender, EventArgs e)
         {
             comboBox1.Items.Add(textBox1.Text);
+            textBox1.Text = null;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             listBox1.Items.Add(comboBox1.Text);
+            comboBox1.Text = "";
             comboBox1.Items.Remove(comboBox1.SelectedItem);
+            
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             listBox2.Items.Add(comboBox1.Text);
+            comboBox1.Text = "";
             comboBox1.Items.Remove(comboBox1.SelectedItem);
 
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            listBox2.Items.Add(listBox1.SelectedItem);
-            listBox1.Items.Remove(listBox1.SelectedItem);
+            
+            if (listBox1.SelectedItem != null)
+            {
+                listBox2.Items.Add(listBox1.SelectedItem);
+                listBox1.Items.Remove(listBox1.SelectedItem);
+                
+            }
+            else
+            {
+                MessageBox.Show("Lütfen A Takımından Bir Oyuncu Seçiniz.");
+            }
+
 
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(listBox2.SelectedItem);
-            listBox2.Items.Remove(listBox2.SelectedItem);
+            if (listBox2.SelectedItem != null) {
+                listBox1.Items.Add(listBox2.SelectedItem);
+                listBox2.Items.Remove(listBox2.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Lütfen B Takımından Bir Oyuncu Seçiniz.");
+            }
+
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Add(listBox1.SelectedItem);
-            listBox1.Items.Remove(listBox1.SelectedItem);
+            if (listBox1.SelectedItem != null)
+            {
+                comboBox1.Items.Add(listBox1.SelectedItem);
+                listBox1.Items.Remove(listBox1.SelectedItem);
+            }
+            else { 
+            MessageBox.Show("Lütven Kaldırılacak Oyuncuyu Seçiniz.");
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Add(listBox2.SelectedItem);
-            listBox2.Items.Remove(listBox2.SelectedItem);
+            if (listBox2.SelectedItem != null)
+            {
+                comboBox1.Items.Add(listBox2.SelectedItem);
+                listBox2.Items.Remove(listBox2.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Lütven Kaldırılacak Oyuncuyu Seçiniz.");
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // 1. Temizlik
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+
+            // 2. Oyuncu Listesini Hazırla (ComboBox'taki tüm öğeleri geçici listeye al)
+            List<string> tumOyuncular = new List<string>();
+            foreach (var item in comboBox1.Items)
+            {
+                tumOyuncular.Add(item.ToString());
+            }
+
+            // Yeterli oyuncu yoksa uyarı verip çık
+            if (tumOyuncular.Count < 2)
+            {
+                MessageBox.Show("Rastgele takım yapmak için en az 2 oyuncu olmalı.");
+                return;
+            }
+
+            // 3. Rastgele Atama
+            Random rnd = new Random();
+            int takimSirasi = 0; // 0 = A Takımı (listBox1), 1 = B Takımı (listBox2)
+
+            while (tumOyuncular.Count > 0)
+            {
+                // Rastgele bir oyuncu seç
+                int randomIndex = rnd.Next(tumOyuncular.Count);
+                string secilenOyuncu = tumOyuncular[randomIndex];
+
+                // Takıma Ekle
+                if (takimSirasi == 0)
+                {
+                    listBox1.Items.Add(secilenOyuncu); // A Takımı
+                    takimSirasi = 1; // Sıra B Takımına geçti
+                }
+                else
+                {
+                    listBox2.Items.Add(secilenOyuncu); // B Takımı
+                    takimSirasi = 0; // Sıra A Takımına geçti
+                }
+
+                // Listeden Kaldır
+                tumOyuncular.RemoveAt(randomIndex);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            comboBox1.Text = "";
         }
     }
 }
