@@ -1,6 +1,6 @@
 # [Takım Oluşturma Uygulaması]
 <p align="center">
-<img src="form.png" width="35%" />
+<img src="form1.png" width="35%" />
 </p>
 Bu depo, C# Form uygulamaları ile geliştirilmiş olan **[Basit Bir Takım Oluşturma Uygulamasının]** projesinin kaynak kodlarını içerir.
 
