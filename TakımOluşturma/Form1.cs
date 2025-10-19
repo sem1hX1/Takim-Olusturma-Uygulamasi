@@ -21,7 +21,7 @@ namespace TakımOluşturma
         private void button2_Click(object sender, EventArgs e)
         {
             
-            listBox1.Items.Add(comboBox1.Text);
+            Atakımı.Items.Add(comboBox1.Text);
             comboBox1.Text = "";
             comboBox1.Items.Remove(comboBox1.SelectedItem);
             
@@ -31,7 +31,7 @@ namespace TakımOluşturma
         private void button3_Click(object sender, EventArgs e)
         {
             
-            listBox2.Items.Add(comboBox1.Text);
+            Btakımı.Items.Add(comboBox1.Text);
             comboBox1.Text = "";
             comboBox1.Items.Remove(comboBox1.SelectedItem);
 
@@ -40,10 +40,10 @@ namespace TakımOluşturma
         private void button6_Click(object sender, EventArgs e)
         {
             
-            if (listBox1.SelectedItem != null)
+            if (Atakımı.SelectedItem != null)
             {
-                listBox2.Items.Add(listBox1.SelectedItem);
-                listBox1.Items.Remove(listBox1.SelectedItem);
+                Btakımı.Items.Add(Atakımı.SelectedItem);
+                Atakımı.Items.Remove(Atakımı.SelectedItem);
                 
             }
             else
@@ -56,9 +56,9 @@ namespace TakımOluşturma
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (listBox2.SelectedItem != null) {
-                listBox1.Items.Add(listBox2.SelectedItem);
-                listBox2.Items.Remove(listBox2.SelectedItem);
+            if (Btakımı.SelectedItem != null) {
+                Atakımı.Items.Add(Btakımı.SelectedItem);
+                Btakımı.Items.Remove(Btakımı.SelectedItem);
             }
             else
             {
@@ -70,10 +70,10 @@ namespace TakımOluşturma
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem != null)
+            if (Atakımı.SelectedItem != null)
             {
-                comboBox1.Items.Add(listBox1.SelectedItem);
-                listBox1.Items.Remove(listBox1.SelectedItem);
+                comboBox1.Items.Add(Atakımı.SelectedItem);
+                Atakımı.Items.Remove(Atakımı.SelectedItem);
             }
             else { 
             MessageBox.Show("Lütven Kaldırılacak Oyuncuyu Seçiniz.");
@@ -82,10 +82,10 @@ namespace TakımOluşturma
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (listBox2.SelectedItem != null)
+            if (Btakımı.SelectedItem != null)
             {
-                comboBox1.Items.Add(listBox2.SelectedItem);
-                listBox2.Items.Remove(listBox2.SelectedItem);
+                comboBox1.Items.Add(Btakımı.SelectedItem);
+                Btakımı.Items.Remove(Btakımı.SelectedItem);
             }
             else
             {
@@ -96,8 +96,8 @@ namespace TakımOluşturma
         private void button8_Click(object sender, EventArgs e)
         {
             // 1. Temizlik
-            listBox1.Items.Clear();
-            listBox2.Items.Clear();
+            Atakımı.Items.Clear();
+            Btakımı.Items.Clear();
 
             // 2. Oyuncu Listesini Hazırla (ComboBox'taki tüm öğeleri geçici listeye al)
             List<string> tumOyuncular = new List<string>();
@@ -126,12 +126,12 @@ namespace TakımOluşturma
                 // Takıma Ekle
                 if (takimSirasi == 0)
                 {
-                    listBox1.Items.Add(secilenOyuncu); // A Takımı
+                    Atakımı.Items.Add(secilenOyuncu); // A Takımı
                     takimSirasi = 1; // Sıra B Takımına geçti
                 }
                 else
                 {
-                    listBox2.Items.Add(secilenOyuncu); // B Takımı
+                    Btakımı.Items.Add(secilenOyuncu); // B Takımı
                     takimSirasi = 0; // Sıra A Takımına geçti
                 }
 

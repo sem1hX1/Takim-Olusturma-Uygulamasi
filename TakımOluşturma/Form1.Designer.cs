@@ -35,8 +35,8 @@
             label2 = new Label();
             button2 = new Button();
             button3 = new Button();
-            listBox1 = new ListBox();
-            listBox2 = new ListBox();
+            Atakımı = new ListBox();
+            Btakımı = new ListBox();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
@@ -123,21 +123,21 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
-            // listBox1
+            // Atakımı
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(66, 212);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(104, 104);
-            listBox1.TabIndex = 7;
+            Atakımı.FormattingEnabled = true;
+            Atakımı.Location = new Point(66, 212);
+            Atakımı.Name = "Atakımı";
+            Atakımı.Size = new Size(104, 104);
+            Atakımı.TabIndex = 7;
             // 
-            // listBox2
+            // Btakımı
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(240, 212);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(104, 104);
-            listBox2.TabIndex = 8;
+            Btakımı.FormattingEnabled = true;
+            Btakımı.Location = new Point(240, 212);
+            Btakımı.Name = "Btakımı";
+            Btakımı.Size = new Size(104, 104);
+            Btakımı.TabIndex = 8;
             // 
             // button4
             // 
@@ -223,8 +223,8 @@
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(listBox2);
-            Controls.Add(listBox1);
+            Controls.Add(Btakımı);
+            Controls.Add(Atakımı);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(label2);
@@ -249,8 +249,8 @@
         private Label label2;
         private Button button2;
         private Button button3;
-        private ListBox listBox1;
-        private ListBox listBox2;
+        private ListBox Atakımı;
+        private ListBox Btakımı;
         private Button button4;
         private Button button5;
         private Button button6;
